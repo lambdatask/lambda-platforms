@@ -2,8 +2,16 @@ const net = require('net')
 const lambda = require('./lambda')
 
 const server = net.createServer((socket) => {
-  const result = lambda()
-  socket.end(result + '\n')
+  let result = ''
+
+  socket.on('data', (data) => {
+    result += data.toString('utf8')
+  })
+
+  socket.on('end', () => {
+    const context = JSON.parse(result)
+    lambda(context)
+  })
 })
 
 server.listen('8888', () => {
