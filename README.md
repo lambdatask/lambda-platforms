@@ -1,7 +1,7 @@
-# lambda-runner
+# lambda-platforms
 
 ```
-$ docker build -t lambda-runner/node-baseapp .
+$ docker build -t lambda-platform/node-baseapp .
 ```
 
 ```
