@@ -1,3 +1,3 @@
-FROM lambda-runner/node-baseapp
+FROM lambda-platform/node-baseapp
 
 COPY index.js /usr/src/app/lambda/
